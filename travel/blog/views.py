@@ -22,3 +22,12 @@ def blog_category(request, cat_name): # we can use just one view def blog
     posts = posts.filter(category__name=cat_name) # catgory -> get us id -> with __ we can extract fields like name
     context = {'posts': posts}
     return render(request, 'blog/blog-home.html', context=context)
+
+def blog_search(request):
+    # print(request.__dict__)
+    posts = Post.objects.filter(status=1)
+    if request.method == 'GET':
+        if s := request.GET.get('s'): # varlus feture s:= if condition true
+            posts = posts.filter(content__contains=s)
+    context = {'posts': posts}
+    return render(request, 'blog/blog-home.html', context=context)
