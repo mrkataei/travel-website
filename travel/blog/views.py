@@ -40,6 +40,6 @@ def blog_search(request):
     posts = Post.objects.filter(status=1)
     if request.method == 'GET':
         if s := request.GET.get('s'): # varlus feture s:= if condition true
-            posts = posts.filter(content__contains=s)
+            posts = posts.filter(content__contains=s) # contains for search query in context
     context = {'posts': posts}
     return render(request, 'blog/blog-home.html', context=context)

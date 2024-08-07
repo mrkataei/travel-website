@@ -285,15 +285,8 @@
           </div>
 
           {% include 'blog/blog-writer.html'%} {% latestposts 1 %}
-          <div class="single-sidebar-widget ads-widget">
-            <a href="#"
-              ><img
-                class="img-fluid"
-                src="{%static 'img/blog/ads-banner.jpg'%}"
-                alt=""
-            /></a>
-          </div>
-
+          
+          {% include 'blog/blog-ads.html'%}
           {% postcategories %}
           <div class="single-sidebar-widget newsletter-widget">
             <h4 class="newsletter-title">Newsletter</h4>
