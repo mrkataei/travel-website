@@ -11,7 +11,7 @@ def blog(request, **kwargs):
         posts = posts.filter(author__username=kwargs['author_username'] )
 
     #add paginator
-    posts = Paginator(posts, 2)
+    posts = Paginator(posts, 1)
     try:
         page_number = request.GET.get('page')
         posts = posts.get_page(page_number)
