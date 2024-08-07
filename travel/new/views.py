@@ -17,9 +17,9 @@ def contact(request):
         if form.is_valid():
             # name = form.cleaned_data['name']
             form.save()
-            return HttpResponse('done')
-        else:
-            return HttpResponse('not valid ') # in html use {%csrf_token%}{{form }}
+        #     return HttpResponse('done')
+        # else:
+        #     return HttpResponse('not valid ') # in html use {%csrf_token%}{{form }}
         
     form = ContactForm()
     return render(request, 'new/contact.html',{'form': form} )
