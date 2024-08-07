@@ -141,6 +141,9 @@
                 mediocre print and graphic output.
               </p>
               <div>
+                {% for message in messages %}
+                    <div class="alert alert-info" role="alert">{{ message }}</div>
+                {% endfor %}
                 <form action="{% url 'new:newsletter' %}" method="post" class="subscription relative">
                   <div class="input-group d-flex flex-row">
                     {% csrf_token %}
@@ -155,6 +158,7 @@
                     <button class="btn bb-btn" type="submit">
                       <span class="lnr lnr-location"></span>
                     </button>
+                    
                   </div>
                   <div class="mt-10 info"></div>
                 </form>

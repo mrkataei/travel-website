@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from django.contrib import messages
 from blog.models import Post
 from new.forms import ContactForm, Newsletter
 
@@ -17,6 +18,10 @@ def contact(request):
         if form.is_valid():
             # name = form.cleaned_data['name']
             form.save()
+            messages.add_message(request, messages.SUCCESS, "your message sumited successfully.")
+
+        else:
+            messages.add_message(request, messages.ERROR, "your message did not sumited.")
         #     return HttpResponse('done')
         # else:
         #     return HttpResponse('not valid ') # in html use {%csrf_token%}{{form }}
@@ -30,6 +35,8 @@ def newsletter(request):
         form = Newsletter(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, "your email sumited successfully.")
             return HttpResponseRedirect('/')
     else:
+        messages.add_message(request, messages.ERROR, "your email did not sumited.")
         return HttpResponseRedirect('/')
