@@ -1,5 +1,5 @@
 from django.contrib import admin
-from new.models import Contact
+from new.models import Contact, Newsletter
 
 
 
@@ -10,3 +10,5 @@ class ContactAdmin(admin.ModelAdmin):
     search_fields = ('name', 'message')
     date_hierarchy = 'created_date'
     
+
+admin.site.register(Newsletter)

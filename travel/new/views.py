@@ -1,6 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from blog.models import Post
-from new.forms import ContactForm
+from new.forms import ContactForm, Newsletter
 
 def home(request):
     posts = Post.objects.filter(status=1).order_by('published_date')[:6]
@@ -23,3 +23,13 @@ def contact(request):
         
     form = ContactForm()
     return render(request, 'new/contact.html',{'form': form} )
+
+
+def newsletter(request):
+    if request.method == 'POST':
+        form = Newsletter(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+    else:
+        return HttpResponseRedirect('/')
