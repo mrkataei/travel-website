@@ -9,4 +9,5 @@ urlpatterns = [
     path('author/<str:author_username>', blog, name='author'),
     path('search/', blog_search, name='search'),
     path('post-<int:pid>', blog_single, name='single'),
+    path('tag/<str:tag_name>', blog, name='tag'),
 ]
