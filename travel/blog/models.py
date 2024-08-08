@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -34,6 +34,9 @@ class Post(models.Model):
     def snippets(self):
         return self.content[:100] + "..." # you can use truncatechar tag filter
         # like this -> {{post.content|truncatechar:100}}
+
+    def get_absolute_url(self):
+        return reverse("blog:single", kwargs={'pid': self.id})
     
     class Meta: # apply to all objects but when define it into admin just view in admin panel not in queries
         ordering = ['created_date']
