@@ -1,5 +1,5 @@
 {%extends 'base.html'%} {% load static %} {% load blog_tag %} {% block content%}
-
+{% load humanize %}
 <!-- start banner Area -->
 <section class="banner-area relative blog-home-banner" id="home">
   <div class="overlay overlay-bg"></div>
@@ -109,11 +109,11 @@
                 <span class="lnr lnr-user"></span>
               </p>
               <p class="date col-lg-12 col-md-12 col-6">
-                <a href="#">{{post.published_date|date:"D d M Y"}}</a>
+                <a href="#">{{post.published_date|naturaltime}}</a>
                 <span class="lnr lnr-calendar-full"></span>
               </p>
               <p class="view col-lg-12 col-md-12 col-6">
-                <a href="#">{{post.counted_views}} Views</a>
+                <a href="#">{{post.counted_views|intword}} Views</a>
                 <span class="lnr lnr-eye"></span>
               </p>
               <p class="comments col-lg-12 col-md-12 col-6">
