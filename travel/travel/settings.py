@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'robots',
     'taggit',
-    'django_summernote'
+    'django_summernote',
+    'captcha'
 ]
 
 # sites framework
