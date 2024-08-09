@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'new.apps.NewConfig',
     'blog.apps.BlogConfig',
+    'account.apps.AccountConfig',
     'django.contrib.humanize',
     'django.contrib.sites',
     'django.contrib.sitemaps',
