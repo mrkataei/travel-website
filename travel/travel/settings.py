@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -151,3 +152,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SUMMERNOTE_THEME = 'bs4'  # Show summernote with Bootstrap4
+
+
+# captcha admin
+
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
+}
