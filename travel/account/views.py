@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 def login_view(request):
     # if request.user.is_authenticated:
@@ -21,8 +21,12 @@ def login_view(request):
 
     return render(request, 'account/login.html')
 
-# def logout(request):
-#     pass
+def logout_view(request):
+    if request.user.is_authenticated:
+        logout(request)
+    return redirect('/')
+
+
 
 
 # def signup(request):

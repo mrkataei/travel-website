@@ -5,6 +5,6 @@ app_name = 'account'
 
 urlpatterns = [
     path('login/', login_view, name='login'),
-    # path('', logout, name='logout'),
+    path('logout/', logout_view, name='logout'),
     # path('', signup, name='signup'),
 ]
