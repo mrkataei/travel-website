@@ -160,3 +160,6 @@ SUMMERNOTE_THEME = 'bs4'  # Show summernote with Bootstrap4
 MULTI_CAPTCHA_ADMIN = {
     'engine': 'simple-captcha',
 }
+
+
+LOGIN_REDIRECT_URL = '/'
