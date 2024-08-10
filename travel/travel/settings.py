@@ -162,4 +162,4 @@ MULTI_CAPTCHA_ADMIN = {
 }
 
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'account:login'
